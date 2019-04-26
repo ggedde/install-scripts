@@ -1,3 +1,5 @@
+# Install Multiple Versions of PHP and MYSQL
+
 ## Requirements
 Ubuntu 16.04
 
@@ -6,7 +8,8 @@ Ubuntu 16.04
 Binaries are installed to `/opt` and init.d scripts are installed with version suffix.
  
 Ex.  
-sudo service php-fpm-7.2.15 start
+sudo service php-fpm-7.2.15 start  
+sudo service mysqld-5.6.43 start  
 
 ## Usage:
 sudo bash {script} {version}
