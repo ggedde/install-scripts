@@ -391,6 +391,12 @@ then
 	$(rm -rf /opt/source/mysql-${MYSQL_VERSION})
 fi
 
+if [ -d "/opt/source/mysql-${MYSQL_VERSION}.tar.gz" ]
+then
+	echo "Deleting Source File"
+	$(rm /opt/source/mysql-${MYSQL_VERSION}.tar.gz)
+fi
+
 kill "$!" # kill the spinner
 wait $! 2>/dev/null
 
