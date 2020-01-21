@@ -19,13 +19,13 @@ spinner() {
 
 spinner & # start the spinner
 
-if [ -f "/etc/init.d/php-fpm-${PHP_VERSION}" ]
+if [ -f "/etc/init.d/php${PHP_VERSION}-fpm" ]
 then
 	echo "Stopping PHP if running"
-	$(service php-fpm-${PHP_VERSION} stop)
+	$(service php${PHP_VERSION}-fpm stop)
 
 	echo "Deleting Startup File"
-	$(rm -f /etc/init.d/php-fpm-${PHP_VERSION})
+	$(rm -f /etc/init.d/php${PHP_VERSION}-fpm)
 fi
 
 if [ -d "/opt/source/php-${PHP_VERSION}" ]
@@ -40,10 +40,10 @@ then
 	$(rm -rf /opt/php/${PHP_VERSION})
 fi
 
-if [ -f "/run/php-fpm-${PHP_VERSION}_default.sock" ]
+if [ -f "/run/php${PHP_VERSION}-fpm_default.sock" ]
 then
 	echo "Deleting PHP Socket File"
-	$(rm -f /run/php-fpm-${PHP_VERSION}_default.sock)
+	$(rm -f /run/php${PHP_VERSION}-fpm_default.sock)
 fi
 
 kill "$!" # kill the spinner
