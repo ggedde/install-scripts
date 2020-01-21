@@ -586,6 +586,12 @@ then
 	$(rm -rf /opt/source/php-$PHP_VERSION)
 fi
 
+if [ -f "/opt/source/php-$PHP_VERSION.tar.bz2" ]
+then
+	echo "Removing Build Source"
+	$(rm /opt/source/php-$PHP_VERSION.tar.bz2)
+fi
+
 echo ""
 echo "
 #############################################################
