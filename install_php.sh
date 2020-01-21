@@ -21,7 +21,7 @@ then
 	PHP_INSTALL_PATH=$3
 fi
 
-PHP_INIT_SCRIPT="php-fpm-$PHP_VERSION"
+PHP_INIT_SCRIPT="php$PHP_VERSION-fpm"
 if [ "$4" != "" ]
 then
 	PHP_INIT_SCRIPT=$4
@@ -453,7 +453,7 @@ then
 
 user = www-data
 group = www-data
-listen = /run/php-fpm-${PHP_VERSION}_default.sock
+listen = /run/php${PHP_VERSION}-fpm_default.sock
 listen.owner = www-data
 listen.group = www-data
 pm = dynamic
